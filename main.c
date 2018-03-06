@@ -1,6 +1,6 @@
 #include <stdint.h>
 
-#define GPIO ((NRF_GPIO_REGS*)__GPIO_BASE_ADDRESS__)
+#define GPIO ((NRF_GPIO_REGS*)0x50000000)
 
 typedef struct {
 	volatile uint32_t RESERVED0[321];
@@ -11,7 +11,7 @@ typedef struct {
 	volatile uint32_t DIR;
 	volatile uint32_t DIRSET;
 	volatile uint32_t DIRCLR;
-	volatile uint32_t RESERVED1[__RESERVED1_SIZE__];
+	volatile uint32_t RESERVED1[121];
 	volatile uint32_t PIN_CNF[32];
 } NRF_GPIO_REGS;
 
